@@ -82,13 +82,17 @@ end
 
 function game:addFaller()
 	local x, y = love.graphics.getWidth()/2, 100
-	if self.spawnType == 1 then
+	if self.spawnType == 1 then -- rectangle
 		local width, height = 200, 30
 		table.insert(self.activeObjects, FallerRectangle:new(x, y, width, height, 0, true))
-		--self.spawnType = 2
-	elseif self.spawnType == 2 then
+		self.spawnType = 2
+	elseif self.spawnType == 2 then -- circle
 		local radius = 30
 		table.insert(self.activeObjects, FallerCircle:new(x, y, radius, true))
+		self.spawnType = 1
+	elseif self.spawnType == 3 then -- rhombus
+		local w, h, w2 = 150, 40, 100
+		--table.insert(self.activeObjects, FallerRhombus:new(x, y, w, h, w2, true))
 		self.spawnType = 1
 	end
 end

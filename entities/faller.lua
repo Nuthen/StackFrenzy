@@ -10,7 +10,7 @@ function Faller:initialize(x, y, active)
 		self.fixture:setUserData('Active')
 	end
 	
-	self.turnSpeed = 4
+	self.turnSpeed = .5
 	self.moveSpeed = 200
 	self.fastFallSpeed = 400
 	
